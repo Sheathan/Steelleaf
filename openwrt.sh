@@ -1,7 +1,6 @@
 # Reference https://misc.flogisoft.com/bash/tip_colors_and_formatting for bash color usage
 echo -e "\e[92mDownloading Image...\e[0m"
-cd /var/lib/vz/dump/
-wget https://github.com/Sheathan/Steelleaf/raw/master/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst
+wget -N https://github.com/Sheathan/Steelleaf/raw/master/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst -O /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst
 echo -e "\e[92mDownload complete, restoring template...\e[0m"
 qmrestore /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst 8000
 echo -e "\e[92mSetting up template and deploying...\e[0m"
