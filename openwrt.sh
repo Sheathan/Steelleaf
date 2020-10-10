@@ -1,9 +1,11 @@
 # Reference https://misc.flogisoft.com/bash/tip_colors_and_formatting for bash color usage
+#/bin/bash
 echo -e "\e[92mDownloading Image...\e[0m"
 wget -N https://github.com/Sheathan/Steelleaf/raw/master/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst -O /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst
 echo -e "\e[92mDownload complete, restoring template...\e[0m"
 qmrestore /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst 8000
 echo -e "\e[92mSetting up template and deploying...\e[0m"
+## Change VM name here ##
 qm clone 8000 2000 --name TST-GW01
 echo -e "\e[92mDeployment complete, waiting to boot VM...\e[0m"
 sleep 10
@@ -12,6 +14,7 @@ qm start 2000
 echo -e "\e[92mWaiting 20 seconds for VM to boot...\e[0m"
 sleep 20
 echo -e "\e[92mConfiguring OpenWRT\e[0m"
+## Change LAN IP address here ##
 qm guest exec 2000 uci set network.lan.ipaddr=10.0.0.1
 qm guest exec 2000 uci commit
 qm guest exec 2000 reboot
