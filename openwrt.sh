@@ -5,7 +5,7 @@ echo -e "\e[92mDownload complete, restoring template...\e[0m"
 qmrestore /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst 8000
 echo -e "\e[92mSetting up template and deploying...\e[0m"
 ## Change VM name here ##
-qm clone 8000 2000 --name TST-GW01
+qm clone 8000 2000 --name TST-GW01 --full
 echo -e "\e[92mDeployment complete, waiting to boot VM...\e[0m"
 sleep 10
 echo -e "\e[92mCloning complete, booting..."
