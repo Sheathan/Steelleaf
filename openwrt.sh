@@ -1,5 +1,4 @@
 # Reference https://misc.flogisoft.com/bash/tip_colors_and_formatting for bash color usage
-#/bin/bash
 echo -e "\e[92mDownloading Image...\e[0m"
 wget -N https://github.com/Sheathan/Steelleaf/raw/master/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst -O /var/lib/vz/dump/vzdump-qemu-2000-2020_10_09-20_52_04.vma.zst
 echo -e "\e[92mDownload complete, restoring template...\e[0m"
