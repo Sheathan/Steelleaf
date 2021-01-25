@@ -1,7 +1,7 @@
 #!/bin/bash
 wget http://www.softether-download.com/files/softether/v4.34-9745-rtm-2020.04.05-tree/Linux/SoftEther_VPN_Bridge/64bit_-_Intel_x64_or_AMD64/softether-vpnbridge-v4.34-9745-rtm-2020.04.05-linux-x64-64bit.tar.gz
 apt update
-apt install build-essential
+apt install -y build-essential
 tar -xvf soft*
 cd vpnbridge
 sed -i 's/default:/#default:/g' Makefile
